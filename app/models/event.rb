@@ -13,6 +13,8 @@ validates :image_file_name, allow_blank: true, format: {
 	message: "Must reference a GIF, JPG or PNG image"
 }
 
+has_many :registrations, dependent: :destroy
+
 	def free?
 		price.blank? || price.zero?
 	end
